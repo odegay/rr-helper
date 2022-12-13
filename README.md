@@ -30,3 +30,15 @@ To run the tests for this this project, simply
 $ npm install
 $ npm test
 ```
+
+## Docker example
+## Core module (OS, updates)
+docker build --no-cache -f Dockerfile_core . -t rr-main-serv-core
+
+## DEV
+docker build --no-cache -f Dockerfile_dev . -t rr-main-serv
+
+## PROD
+docker build --no-cache -f Dockerfile_prod . -t rr-main-serv
+
+docker run --rm -p 3000:3000 -p 8765:8765 rr-main-serv

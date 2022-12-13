@@ -1,0 +1,16 @@
+FROM rr-main-serv-core
+
+COPY . .
+
+#WORKDIR kurento-tutorial-node/kurento-hello-world
+WORKDIR .
+
+#RUN git checkout 6.18.0
+
+RUN npm install
+
+RUN npm run build
+
+EXPOSE 3000 8765
+
+CMD ["npm", "start"]
